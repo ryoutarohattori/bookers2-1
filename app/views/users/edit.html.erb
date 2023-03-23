@@ -13,8 +13,9 @@
  
        <h5>Introduction</h5>
        <%= f.text_area :body, class: "form-control", style: "width:90%", rows: "2" %>
- 
-       <p><input type="submit" name="commit" value="Update User" class="btn btn-secondary" data-disable-with="Update User" /></p>
+       
+       <%= f.submit 'Update User' class="btn btn-secondary" %>
+       
      <% end %>
     </div>
   </div>
