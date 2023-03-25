@@ -6,9 +6,8 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     @book.user_id = current_user.id
-   if @book.valid
-     @book.save
-    return redirect_to book_path(@book.id), notice: 'Signed in successfully.'
+   if @book.save
+    return redirect_to book_path(@book.id)
    else
     render :new
    end
