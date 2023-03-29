@@ -5,6 +5,15 @@
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
      <h1>User info</h1>
 
+     <% if @user.errors.any? %>
+      <%= @user.errors.count %>error prohibited this obj from being saved:
+      <ul>
+        <% @user.errors.full_messages.each do %>
+         <li>Name is too short (minimum is 2 characters)</li>
+        <% end %>
+      </ul>
+     <% end %>
+
      <%= form_with model: @user, method: :patch do |f| %>
 
       <h5>Name</h5>

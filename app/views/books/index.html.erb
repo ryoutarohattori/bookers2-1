@@ -1,8 +1,17 @@
 <%= render 'layouts/flash' %>
 
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>error prohibited this obj from being saved:
+ <ul>
+  <% @book.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+  <% end %>
+ </ul>
+<% end %>
+
 <div class='container'>
  <div class='row'>
-  <%= render 'book',book:@book %>
+  <%= render 'book',book:@book,user:@user %>
 
 
    <div class='col-md-8 offset-md-1'>
